@@ -4,13 +4,14 @@
   font-style: normal;
   font-weight: 400;
   src: local("Agustina Regular"),
-    url(../../Agustina.eb0c59dda4cc308cba96.woff) format("woff");
+    url(../media/Agustina.eb0c59dda4cc308cba96.woff) format("woff");
 }
 @font-face {
   font-display: swap;
   font-family: Montserrat;
   src: local("Montserrat"),
-    url(../../Montserrat-Regular.3cd786652b8a2e9d41f2.ttf) format("woff");
+    url(../media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf)
+      format("woff");
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
