@@ -14,27 +14,27 @@ export default function Projects() {
   // todo: remove useContex because is not supported
   const {isDark} = useContext(StyleContext);
 
-  useEffect(() => {
-    const getRepoData = () => {
-      fetch("/profile.json")
-        .then(result => {
-          if (result.ok) {
-            return result.json();
-          }
-          throw result;
-        })
-        .then(response => {
-          setrepoFunction(response.data.user.pinnedItems.edges);
-        })
-        .catch(function (error) {
-          console.error(
-            `${error} (because of this error, nothing is shown in place of Projects section. Also check if Projects section has been configured)`
-          );
-          setrepoFunction("Error");
-        });
-    };
-    getRepoData();
-  }, []);
+  // useEffect(() => {
+  //   const getRepoData = () => {
+  //     fetch("/profile.json")
+  //       .then(result => {
+  //         if (result.ok) {
+  //           return result.json();
+  //         }
+  //         throw result;
+  //       })
+  //       .then(response => {
+  //         setrepoFunction(response.data.user.pinnedItems.edges);
+  //       })
+  //       .catch(function (error) {
+  //         console.error(
+  //           `${error} (because of this error, nothing is shown in place of Projects section. Also check if Projects section has been configured)`
+  //         );
+  //         setrepoFunction("Error");
+  //       });
+  //   };
+  //   getRepoData();
+  // }, []);
 
   function setrepoFunction(array) {
     setrepo(array);
@@ -46,7 +46,7 @@ export default function Projects() {
     return (
       <Suspense fallback={renderLoader()}>
         <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
+          <h1 className="project-title">¿Deseas ver mis proyectos?</h1>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {
               if (!v) {
@@ -60,7 +60,7 @@ export default function Projects() {
             })}
           </div>
           <Button
-            text={"More Projects"}
+            text={"Ir a mi GitHub"}
             className="project-button"
             href={socialMediaLinks.github}
             newTab={true}

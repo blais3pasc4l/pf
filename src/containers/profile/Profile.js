@@ -16,9 +16,10 @@ export default function Profile() {
   useEffect(() => {
     if (openSource.showGithubProfile === "true") {
       const getProfileData = () => {
-        fetch("/profile.json")
+        fetch("./profile.json")
           .then(result => {
             if (result.ok) {
+              console.log('cayo aqui')
               return result.json();
             }
           })
